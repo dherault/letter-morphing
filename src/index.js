@@ -1,29 +1,13 @@
 const maker = require('makerjs')
 const Raphael = require('raphael')
 const opentype = require('opentype.js')
+
 const apiKey = 'AIzaSyDdsEpMDuWlIWNiStq9FLpAxy7Mvzya3nQ'
 
-function draw() {
-  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-
-  svg.setAttribute('width', 256)
-  svg.setAttribute('height', 256)
-  svg.setAttribute('viewbox', '0 0 100 100')
-
-  const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect')
-
-  rect.setAttribute('x', 0)
-  rect.setAttribute('y', 0)
-  rect.setAttribute('width', '100%')
-  rect.setAttribute('height', '100%')
-  rect.setAttribute('fill', 'lightblue')
-
-  svg.appendChild(rect)
-
-  rootElement.appendChild(svg)
-}
-
 const stepSize = 6
+const svgMargin = 2
+const pointMaxWidth = 100
+const svgSize = 256
 
 let fonts
 let selectedFontData
@@ -77,8 +61,8 @@ function handleSubmitClick() {
       return console.error(error)
     }
 
-    const inputTextModel = new maker.models.Text(font, inputInputElement.value.substring(0, 1), 256)
-    const outputTextModel = new maker.models.Text(font, outputInputElement.value.substring(0, 1), 256)
+    const inputTextModel = new maker.models.Text(font, inputInputElement.value.substring(0, 1), svgSize)
+    const outputTextModel = new maker.models.Text(font, outputInputElement.value.substring(0, 1), svgSize)
 
     const inputSvgText = maker.exporter.toSVG(inputTextModel)
     const outputSvgText = maker.exporter.toSVG(outputTextModel)
@@ -92,8 +76,6 @@ function handleSubmitClick() {
     rootElement.appendChild(outputSvgElement)
   })
 }
-
-const pointMaxWidth = 100
 
 function getTextPoints(svgText) {
   const parser = new DOMParser()
@@ -133,8 +115,6 @@ function getTextPoints(svgText) {
     height: pointMaxHeight,
   }
 }
-
-const svgMargin = 2
 
 function createSvgFromPoints({ points, width, height }) {
   const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
