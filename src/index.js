@@ -2,12 +2,7 @@ const maker = require('makerjs')
 const opentype = require('opentype.js')
 const apiKey = 'AIzaSyDdsEpMDuWlIWNiStq9FLpAxy7Mvzya3nQ'
 
-let fonts
-
 function draw() {
-  const rootElement = document.getElementById('root')
-  const fontsSelectElement = document.getElementById('select-fonts')
-
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
 
   svg.setAttribute('width', 256)
@@ -25,16 +20,28 @@ function draw() {
   svg.appendChild(rect)
 
   rootElement.appendChild(svg)
+}
+
+let fonts
+let rootElement
+let fontsSelectElement
+
+function initializeApplication() {
+  rootElement = document.getElementById('root')
+  fontsSelectElement = document.getElementById('select-fonts')
 
   fetchFont().then(fonts => {
     fonts.items.forEach(font => {
-      const option = document.createElement('option')
+      const optionElement = document.createElement('option')
 
-      option.text = font.family
-
-      fontsSelectElement.options.add(option)
+      optionElement.text = font.family
+      fontsSelectElement.options.add(optionElement)
     })
   })
+
+  fontsSelectElement.onchange = event => {
+    console.log(event)
+  }
 }
 
 function fetchFont() {
@@ -47,4 +54,4 @@ function fetchFont() {
   })
 }
 
-window.onload = draw
+window.onload = initializeApplication
