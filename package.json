@@ -9,9 +9,13 @@
   },
   "dependencies": {
     "makerjs": "^0.17.0",
-    "opentype.js": "^1.1.0"
+    "opentype.js": "^1.1.0",
+    "raphael": "^2.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
     "copy-webpack-plugin": "^5.0.5",
     "eslint": "^6.6.0",
     "eslint-config-dherault": "^1.0.5",

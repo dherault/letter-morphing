@@ -6,19 +6,31 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <style>
+      input {
+        width: 32px;
+      }
+      svg {
+        display: block;
+      }
+      #root {
+        padding: 32px;
+      }
+    </style>
   </head>
   <body>
-    <div>
+    <span>
       Pick a font: <select id="select-fonts"></select>
-    </div>
-    <div>
+    </span>
+    <span>
       Letter to morph from:
-    </div>
-    <input id="input-letter" />
-    <div>
+    </span>
+    <input id="input-input" value="n" />
+    <span>
       Letter to morph into:
-    </div>
-    <input id="output-letter" />
+    </span>
+    <input id="input-output" value="u" />
+    <button id="button-submit">Morph</button>
     <div id="root"></div>
     <script src="bundle.js"></script>
   </body>
