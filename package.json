@@ -1,0 +1,22 @@
+{
+  "name": "letter-morphing",
+  "version": "0.0.0",
+  "description": "Letter morphing in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "build:watch": "webpack --watch"
+  },
+  "dependencies": {
+    "makerjs": "^0.17.0",
+    "opentype.js": "^1.1.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.0.5",
+    "eslint": "^6.6.0",
+    "eslint-config-dherault": "^1.0.5",
+    "eslint-plugin-import": "^2.18.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
