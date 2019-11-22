@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "build:watch": "webpack --watch"
+    "build:watch": "webpack --watch src"
   },
   "dependencies": {
     "makerjs": "^0.17.0",
     "opentype.js": "^1.1.0",
-    "raphael": "^2.3.0"
+    "raphael": "^2.3.0",
+    "text-to-svg": "^3.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",

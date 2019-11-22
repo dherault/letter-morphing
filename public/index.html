@@ -5,7 +5,7 @@
     <title>Letter morphing</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="normalize.css">
     <style>
       input {
         width: 32px;
@@ -25,12 +25,13 @@
     <span>
       Letter to morph from:
     </span>
-    <input id="input-input" value="n" />
+    <input id="input-input" value="A" />
     <span>
       Letter to morph into:
     </span>
-    <input id="input-output" value="u" />
-    <button id="button-submit">Morph</button>
+    <input id="input-output" value="O" />
+    <button id="button-reset">Reset</button>
+    <button id="button-morph">Morph</button>
     <div id="root"></div>
     <script src="bundle.js"></script>
   </body>
